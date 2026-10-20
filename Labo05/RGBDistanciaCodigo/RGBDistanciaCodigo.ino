@@ -213,11 +213,6 @@ void conectarMQTT() {
 
 
 
-El funcionamiento será:
-- Distancia menor a 10 cm: el servo gira a 90° y abre la puerta.
-- Distancia igual o mayor a 10 cm: el servo vuelve a 0° y cierra la puerta.
-- Alarma de tres niveles: el LED RGB cambia entre verde, amarillo y rojo según la distancia.
-- Adafruit IO: muestra distancia, nivel de alarma y estado de la puerta.
 1. Conexiones actualizadas
 Componente	ESP32
 HC-SR04 TRIG	GPIO18
@@ -228,6 +223,7 @@ LED RGB azul	GPIO27
 Servo (señal)	GPIO13
 Servo rojo (VCC)	Fuente externa regulada de 5 V
 Servo marrón/negro (GND)	GND común con ESP32
+
 
 
   
