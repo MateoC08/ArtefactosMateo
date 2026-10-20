@@ -229,4 +229,21 @@ Muy importante: recomiendo una fuente de 5 V separada para alimentar el servo, c
   Une el GND de esa fuente con el GND del ESP32. No alimentes el servo desde 3.3 V ni lo conectes directamente a un GPIO como fuente de energía.
 
 El HC-SR04 convencional también necesita proteger su señal ECHO de 5 V mediante un divisor resistivo antes de GPIO19.
+
+
+Con un LED RGB de cátodo común:
+- Pata R → resistencia 330 Ω → GPIO25.
+- Pata G → resistencia 330 Ω → GPIO26.
+- Pata B → resistencia 330 Ω → GPIO27.
+- Pata común → GND.
+No todos los LEDs RGB tienen el mismo orden físico de patas. Identifica su distribución antes de conectarlo; la pata más larga suele ser común, pero eso por sí solo no indica si es ánodo o cátodo.
+4. Cómo comprobarlo antes de ejecutar el programa
+Te recomiendo probar el circuito por partes:
+1. Conecta el ESP32 y el HC-SR04. Comprueba que el Monitor Serial muestre distancias válidas.
+2. Conecta el RGB y verifica que cambie de color al acercar la mano.
+3. Conecta el servo a su fuente externa, con GND común, y verifica que gire a 0° y 90°.
+4. Finalmente, utiliza el programa completo y configura los feeds distancia, alarma y puerta en Adafruit IO.
+Necesito confirmar algo para evitar que conectes un cable en el lugar equivocado: ¿puedes enviarme una fotografía de tu ESP32 de 34 pines, tomada desde arriba, donde se puedan leer los nombres impresos a ambos lados?
+
+La imagen que me enviaste al inicio corresponde a una placa con 38 posiciones físicas. Si tu ESP32 real tiene 34, el orden de los pines podría ser diferente. Con esa fotografía te podré indicar exactamente dónde conectar cada jumper en tu placa.
   
