@@ -229,19 +229,5 @@ Servo (señal)	GPIO13
 Servo rojo (VCC)	Fuente externa regulada de 5 V
 Servo marrón/negro (GND)	GND común con ESP32
 
-Con el rango configurado de 0 a 30 cm:
-Distancia medida	Nivel	LED RGB	Puerta
-2 a menos de 10 cm	3	Verde	Abierta
-10 a menos de 20 cm	2	Amarillo	Cerrada
-20 a 30 cm	1	Rojo	Cerrada
-Más de 30 cm	0	Apagado	Cerrada
-Lectura inválida	0	Apagado	Estado desconocido
-Nota: el sensor tiene un rango mínimo práctico cercano a 2 cm, así que las mediciones inferiores a ese valor se consideran inválidas. Los colores y el rango de 30 cm son decisiones para la práctica; lo que exige la fotografía es que la puerta se abra a menos de 10 cm.
-4. Configuración de Adafruit IO
-En Adafruit IO, crea tres feeds con estos nombres exactos:
-Feed	Tipo de información	Widget sugerido
-distancia	Número en cm	Gauge
-alarma	Número 0–3	Gauge
-puerta	ABIERTA, CERRADA o SIN LECTURA	Text
 
   
