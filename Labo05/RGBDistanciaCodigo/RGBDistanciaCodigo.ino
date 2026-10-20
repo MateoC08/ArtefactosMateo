@@ -225,5 +225,8 @@ Servo rojo (VCC)	Fuente externa regulada de 5 V
 Servo marrón/negro (GND)	GND común con ESP32
 
 
+Muy importante: recomiendo una fuente de 5 V separada para alimentar el servo, capaz de suministrar la corriente que necesite tu modelo.
+  Une el GND de esa fuente con el GND del ESP32. No alimentes el servo desde 3.3 V ni lo conectes directamente a un GPIO como fuente de energía.
 
+El HC-SR04 convencional también necesita proteger su señal ECHO de 5 V mediante un divisor resistivo antes de GPIO19.
   
