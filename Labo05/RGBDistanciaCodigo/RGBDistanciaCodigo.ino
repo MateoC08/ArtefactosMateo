@@ -210,3 +210,31 @@ void conectarMQTT() {
   }
   Serial.println("¡Conectado a Adafruit IO!");
 }
+
+
+Podemos reutilizar los mismos pines que ya venías utilizando:
+Componente	ESP32
+HC-SR04 TRIG	GPIO18
+HC-SR04 ECHO	GPIO19, mediante divisor de voltaje
+HC-SR04 VCC	5 V
+HC-SR04 GND	GND
+LED RGB rojo	GPIO25
+LED RGB verde	GPIO26
+LED RGB azul	GPIO27
+
+En tu código anterior, PIN_R = 25, PIN_G = 26 y PIN_B = 27, por lo que podemos mantener exactamente esa estructura. 
+Cada canal del RGB necesita una resistencia de 330 Ω y debes identificar si el LED es de ánodo común o cátodo común.
+
+Importante: El ECHO de un HC-SR04 convencional alimentado a 5 V requiere un divisor de voltaje para proteger el ESP32.
+3. Cómo funcionaría la alarma
+Una posible configuración sería la siguiente:
+Distancia	Nivel	Color	Puerta
+2 a menos de 10 cm	3	Verde	Abierta
+10 a menos de 20 cm	2	Amarillo	Cerrada
+20 a 30 cm	1	Rojo	Cerrada
+
+En el ejercicio solamente se establece el umbral de apertura de menos de 10 cm. Los límites de los otros niveles y sus colores son una propuesta para practicar, no valores indicados por el docente.
+
+Podemos usar una función que divida el rango de 0 a 30 cm en tres niveles y después invertir su interpretación para que el nivel 3 corresponda a la persona más cercana.
+
+  
